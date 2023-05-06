@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    password: wq202241
+    username: root
+    url: jdbc:mysql:///xdb
+
+
+  redis:
+    port: 6379
+    host: localhost
+    database: 1
+
+logging:
+  level:
+    com.sys: debug
+mybatis-plus:
+  type-aliases-package: com/sys/**/entity
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0

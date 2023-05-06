@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sys.usermanager.mapper.UserMapper">
+    <select id="selectUser" resultType="com.sys.usermanager.entity.User">
+        select * from x_user where username=#{username} and password = #{password}
+    </select>
+
+    <select id="selectUserInfoByUserId" parameterType="integer" resultType="string">
+        select role_name
+        from x_user_role a , x_role b
+        where a.user_id= #{userId} and a.role_id =b.role_id
+    </select>
+</mapper>
